@@ -1,102 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Messenger Automation</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://i.imgur.com/BNKq0fl.jpeg" type="image/jpeg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <title>Alex AutoBot VIP</title>
+    <link rel="icon" href="https://i.imgur.com/BNKq0fl.jpeg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --gold: #facc15;
+        --dark: #0f0f0f;
+        --card: rgba(30, 30, 30, 0.6);
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: radial-gradient(ellipse at center, #0f0f0f 0%, #090909 100%);
+        color: #fefce8;
+        overflow-x: hidden;
+      }
+
+      .vip-glass {
+        backdrop-filter: blur(20px);
+        background-color: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+      }
+
+      .vip-button {
+        background: linear-gradient(135deg, #facc15, #eab308);
+        color: #111;
+        font-weight: 600;
+        border-radius: 9999px;
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .vip-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 30px rgba(250, 204, 21, 0.5);
+      }
+
+      .input-vip {
+        background-color: #1c1c1c;
+        color: white;
+        padding: 0.75rem 1rem;
+        border: 1px solid #3f3f3f;
+        border-radius: 0.75rem;
+        width: 100%;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .input-vip:focus {
+        outline: none;
+        border-color: #facc15;
+        box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.5);
+      }
+    </style>
   </head>
   <body>
-    <div class="header">
-      <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyeXJtdTJoOGR4bnZ4aXF4aHM5NnBpbWIwbWUzb2traXc3MWpmbmx5OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vMSXa7KFGx49aeeXhe/giphy.gif" alt="Banner" class="banner" />
-      <img src="https://i.imgur.com/ih4EcwT.jpeg" alt="Profile" class="profile-pic" />
-    </div>
-
-    <div class="profile-container">
-      <div class="profile-name">
-        Vernだ <i class="fas fa-check-circle verified-icon"></i>
+    <!-- Header -->
+    <header class="relative">
+      <img src="https://media2.giphy.com/media/vMSXa7KFGx49aeeXhe/giphy.gif" class="w-full h-60 object-cover opacity-90" />
+      <div class="absolute top-40 left-1/2 transform -translate-x-1/2">
+        <img src="https://i.imgur.com/ih4EcwT.jpeg" class="w-32 h-32 rounded-full border-4 border-yellow-400 shadow-xl object-cover" />
       </div>
-      <a href="https://github.com/vernesg" class="github-link" target="_blank">
-        <i class="fab fa-github"></i> github.com/vernesg
-      </a>
-      <p class="warning">
-        Just a reminder by @vern, using this bot can cause suspension, locked of your account so much better to use your dummy account. If there's a trouble about using this site just message me with no hesitation, thanks and enjoy!.
+    </header>
+
+    <!-- Profile -->
+    <section class="text-center mt-20">
+      <h1 class="text-4xl font-bold text-yellow-300">Alex Reborn V3</h1>
+      <p class="text-sm text-gray-400">By <a href="https://github.com/Alex3925" class="hover:underline text-yellow-400">Alex3925</a></p>
+      <p class="mt-2 text-xs text-red-300 px-4 max-w-xl mx-auto">
+        ⚠ Please use a dummy account when launching this Bot. DM Alex for assistance. Enjoy responsibly!
       </p>
+    </section>
+
+    <!-- VIP Navigation -->
+    <div class="flex justify-center gap-4 mt-6">
+      <a href="https://www.facebook.com/100085861488156" target="_blank" class="vip-button">View Profile</a>
+      <a href="https://www.facebook.com/share/16qnZN2aCj/" target="_blank" class="vip-button">Visit Page Bot</a>
     </div>
 
- <div class="button-container">
-  <a href="https://www.facebook.com/vrn.esg404" target="_blank" class="btn">View profile</a>
-  <a href="https://vern-phi.vercel.app/" target="_blank" class="btn btn-secondary">View page</a>
-</div>
-
-    <div class="container">
-      <h2 class="subtitle">Facebook Appstate</h2>
-      <form id="json-form" onsubmit="submitForm(event)">
-        <textarea id="json-data" placeholder="Paste your appstate here"></textarea>
-      </form>
-
-      <h2 class="subtitle">Bot Details</h2>
-      <input type="text" placeholder="username" />
-      <input type="text" placeholder="password" />
-      <input type="text" placeholder="bot name (ex: vern)" />
-
-      <div id="listOfCommands">
-        <h2 class="subtitle">Select your commands</h2>
-        <button class="btn" onclick="selectAllCommands()">Select all commands</button>
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto mt-10 px-6 space-y-10">
+      <!-- Facebook Appstate -->
+      <div class="vip-glass p-6">
+        <h2 class="text-2xl font-semibold text-yellow-400 mb-4">📦 Facebook Appstate</h2>
+        <textarea id="json-data" rows="5" placeholder="Paste your Appstate here..." class="input-vip resize-none"></textarea>
       </div>
 
-      <div id="listOfCommandsEvent">
-        <h2 class="subtitle">Select your event commands</h2>
-        <button class="btn" onclick="selectAllEvents()">Select all events</button>
+      <!-- Bot Details -->
+      <div class="vip-glass p-6 space-y-6">
+        <h2 class="text-2xl font-semibold text-yellow-400">🤖 Bot Configuration</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Username" class="input-vip" />
+          <input type="text" placeholder="Password" class="input-vip" />
+          <input type="text" placeholder="Bot Name (e.g. vern)" class="input-vip md:col-span-2" />
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <button onclick="selectAllCommands()" class="vip-button w-full md:w-auto">✅ Select Commands</button>
+          <button onclick="selectAllEvents()" class="vip-button w-full md:w-auto">🎯 Select Events</button>
+        </div>
+
+        <div>
+          <h3 class="text-yellow-400 text-sm mb-1">⚙️ Prefix</h3>
+          <input type="text" id="inputOfPrefix" placeholder="!" class="input-vip" />
+        </div>
+
+        <div>
+          <h3 class="text-yellow-400 text-sm mb-1">👑 Admin UID</h3>
+          <input type="text" id="inputOfAdmin" placeholder="Facebook UID" class="input-vip" />
+        </div>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" id="agreeCheckbox" class="accent-yellow-400" />
+          <span class="text-sm text-gray-300">I agree to the Terms and Conditions</span>
+        </label>
+
+        <div class="text-center mt-4">
+          <button onclick="State()" id="submitButton" disabled class="vip-button text-lg px-10 py-3">
+            🚀 Launch VIP Bot
+          </button>
+        </div>
       </div>
+    </main>
 
-      <div id="prefixOfCommands">
-        <h2 class="subtitle">Enter prefix (important)</h2>
-        <input type="text" id="inputOfPrefix" />
-      </div>
+    <!-- Result + Audio -->
+    <div id="result" class="max-w-3xl mx-auto mt-10 text-center hidden"></div>
+    <div id="audio-container" class="hidden"></div>
 
-      <div id="adminOfCommands">
-        <h2 class="subtitle">Enter UID (important)</h2>
-        <input type="text" id="inputOfAdmin" />
-      </div>
-
-      <label class="terms-check">
-        <input type="checkbox" id="agreeCheckbox" /> I have read and agree to the Terms and Conditions.
-      </label>
-
-      <div class="text-center">
-        <button class="btn submit-btn" onclick="State()" disabled id="submitButton">Submit</button>
-      </div>
-    </div>
-
-    <div id="audio-container" style="display:none;"></div>
-
-    <div id="result" class="container text-center" style="display: none;"></div>
-
-    <footer class="footer">
-      <p>Time: <span id="time"></span></p>
-      <p>Ping: <span id="ping"></span></p>
+    <!-- Footer -->
+    <footer class="text-center mt-12 mb-6 text-gray-500 text-sm">
+      <p>Time: <span id="time"></span> | Ping: <span id="ping"></span></p>
     </footer>
 
+    <!-- JS Logic -->
     <script src="script.js"></script>
     <script>
       let audioStarted = false;
-
       document.addEventListener("click", function () {
         if (!audioStarted) {
           const iframe = document.createElement("iframe");
-          iframe.width = "1";
-          iframe.height = "1";
-          iframe.src = "https://www.youtube.com/embed/JdU0gDDCiB8?autoplay=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3";
-          iframe.frameBorder = "0";
-          iframe.allow = "autoplay; encrypted-media";
-          iframe.allowFullscreen = true;
-          iframe.style.opacity = "0";
-          iframe.style.position = "absolute";
-          iframe.style.left = "-9999px";
+          iframe.src = "https://www.youtube.com/embed/JdU0gDDCiB8?autoplay=1";
+          iframe.style.display = "none";
+          iframe.allow = "autoplay";
           document.getElementById("audio-container").appendChild(iframe);
           audioStarted = true;
         }
