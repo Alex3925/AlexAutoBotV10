@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,70 +12,90 @@
         --dark: #0f0f0f;
         --card: rgba(30, 30, 30, 0.6);
       }
-
       body {
         font-family: 'Montserrat', sans-serif;
-        background: radial-gradient(ellipse at center, #0f0f0f 0%, #090909 100%);
+        background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
         color: #fefce8;
         overflow-x: hidden;
-      }
+      }.vip-glass {
+    backdrop-filter: blur(20px);
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.6), rgba(20, 20, 20, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.25);
+    transition: transform 0.3s ease;
+  }
 
-      .vip-glass {
-        backdrop-filter: blur(20px);
-        background-color: var(--card);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
-      }
+  .vip-glass:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 80px rgba(255, 215, 0, 0.35);
+  }
 
-      .vip-button {
-        background: linear-gradient(135deg, #facc15, #eab308);
-        color: #111;
-        font-weight: 600;
-        border-radius: 9999px;
-        padding: 0.75rem 1.5rem;
-        box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
-        transition: all 0.3s ease;
-      }
+  .vip-button {
+    background: linear-gradient(135deg, #facc15, #eab308);
+    color: #111;
+    font-weight: 700;
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(250, 204, 21, 0.6);
+    transition: all 0.3s ease;
+  }
 
-      .vip-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 30px rgba(250, 204, 21, 0.5);
-      }
+  .vip-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 40px rgba(250, 204, 21, 0.8);
+  }
 
-      .input-vip {
-        background-color: #1c1c1c;
-        color: white;
-        padding: 0.75rem 1rem;
-        border: 1px solid #3f3f3f;
-        border-radius: 0.75rem;
-        width: 100%;
-        transition: border 0.3s ease, box-shadow 0.3s ease;
-      }
+  .input-vip {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: 1px solid #3f3f3f;
+    border-radius: 0.75rem;
+    width: 100%;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
 
-      .input-vip:focus {
-        outline: none;
-        border-color: #facc15;
-        box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.5);
-      }
+  .input-vip:focus {
+    outline: none;
+    border-color: #facc15;
+    box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.5);
+  }
 
-      .command-container {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
+  .gold-text {
+    background: linear-gradient(to right, #facc15, #fff700, #facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s infinite linear;
+    background-size: 200% auto;
+  }
 
-      .command-label.disable {
-        color: #6b7280;
-      }
+  @keyframes shimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
 
-      .command-checkbox:checked {
-        background-color: #facc15;
-        border-color: #facc15;
-      }
-    </style>
+  .command-label.disable {
+    color: #6b7280;
+  }
+
+  .command-checkbox:checked {
+    background-color: #facc15;
+    border-color: #facc15;
+  }
+
+  .vip-shadow-card {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.1), 0 0 40px rgba(255, 215, 0, 0.2);
+  }
+</style>
+
   </head>
   <body>
     <!-- Header -->
@@ -85,104 +104,103 @@
       <div class="absolute top-40 left-1/2 transform -translate-x-1/2">
         <img src="https://i.imgur.com/ih4EcwT.jpeg" class="w-32 h-32 rounded-full border-4 border-yellow-400 shadow-xl object-cover" />
       </div>
-    </header>
+    </header><!-- Profile Section -->
+<section class="text-center mt-20">
+  <h1 class="text-5xl font-bold gold-text">Alex Reborn V3</h1>
+  <p class="text-sm text-gray-400">By <a href="https://github.com/Alex3925" class="hover:underline text-yellow-400">Alex3925</a></p>
+  <p class="mt-2 text-xs text-red-300 px-4 max-w-xl mx-auto">
+    ⚠ Please use a dummy account when launching this Bot. DM Alex for assistance. Enjoy responsibly!
+  </p>
+</section>
 
-    <!-- Profile -->
-    <section class="text-center mt-20">
-      <h1 class="text-4xl font-bold text-yellow-300">Alex Reborn V3</h1>
-      <p class="text-sm text-gray-400">By <a href="https://github.com/Alex3925" class="hover:underline text-yellow-400">Alex3925</a></p>
-      <p class="mt-2 text-xs text-red-300 px-4 max-w-xl mx-auto">
-        ⚠ Please use a dummy account when launching this Bot. DM Alex for assistance. Enjoy responsibly!
-      </p>
-    </section>
+<!-- VIP Navigation -->
+<div class="flex justify-center gap-4 mt-6">
+  <a href="https://www.facebook.com/100085861488156" target="_blank" class="vip-button">View Profile</a>
+  <a href="https://www.facebook.com/profile.php?id=61577053836226" target="_blank" class="vip-button">Visit Page Bot</a>
+</div>
 
-    <!-- VIP Navigation -->
-    <div class="flex justify-center gap-4 mt-6">
-      <a href="https://www.facebook.com/100085861488156" target="_blank" class="vip-button">View Profile</a>
-      <a href="https://www.facebook.com/profile.php?id=61577053836226" target="_blank" class="vip-button">Visit Page Bot</a>
+<!-- Main Container -->
+<main class="max-w-4xl mx-auto mt-10 px-6 space-y-10">
+  <!-- Facebook Appstate -->
+  <div class="vip-glass p-6">
+    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">📦 Facebook Appstate</h2>
+    <textarea id="json-data" rows="5" placeholder="Paste your Appstate here..." class="input-vip resize-none"></textarea>
+  </div>
+
+  <!-- Bot Details -->
+  <div class="vip-glass p-6 space-y-6">
+    <h2 class="text-2xl font-semibold text-yellow-400">🤖 Bot Configuration</h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <input type="text" placeholder="Username" class="input-vip" />
+      <input type="text" placeholder="Password" class="input-vip" />
+      <input type="text" placeholder="Bot Name (e.g. Alex)" class="input-vip md:col-span-2" />
     </div>
 
-    <!-- Main Container -->
-    <main class="max-w-4xl mx-auto mt-10 px-6 space-y-10">
-      <!-- Facebook Appstate -->
-      <div class="vip-glass p-6">
-        <h2 class="text-2xl font-semibold text-yellow-400 mb-4">📦 Facebook Appstate</h2>
-        <textarea id="json-data" rows="5" placeholder="Paste your Appstate here..." class="input-vip resize-none"></textarea>
+    <!-- Commands and Events -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-yellow-400 text-lg mb-2">📋 Commands</h3>
+        <div id="listOfCommands" class="space-y-2"></div>
       </div>
-
-      <!-- Bot Details -->
-      <div class="vip-glass p-6 space-y-6">
-        <h2 class="text-2xl font-semibold text-yellow-400">🤖 Bot Configuration</h2>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" placeholder="Username" class="input-vip" />
-          <input type="text" placeholder="Password" class="input-vip" />
-          <input type="text" placeholder="Bot Name (e.g. Alex)" class="input-vip md:col-span-2" />
-        </div>
-
-        <!-- Commands and Events -->
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 class="text-yellow-400 text-lg mb-2">📋 Commands</h3>
-            <div id="listOfCommands" class="space-y-2"></div>
-          </div>
-          <div>
-            <h3 class="text-yellow-400 text-lg mb-2">🎯 Events</h3>
-            <div id="listOfCommandsEvent" class="space-y-2"></div>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <button onclick="selectAllCommands()" class="vip-button w-full md:w-auto">✅ Select All Commands</button>
-          <button onclick="selectAllEvents()" class="vip-button w-full md:w-auto">🎯 Select All Events</button>
-        </div>
-
-        <div>
-          <h3 class="text-yellow-400 text-sm mb-1">⚙️ Prefix</h3>
-          <input type="text" id="inputOfPrefix" placeholder="!" class="input-vip" />
-        </div>
-
-        <div>
-          <h3 class="text-yellow-400 text-sm mb-1">👑 Admin UID</h3>
-          <input type="text" id="inputOfAdmin" placeholder="Facebook UID" class="input-vip" />
-        </div>
-
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" id="agreeCheckbox" class="accent-yellow-400" />
-          <span class="text-sm text-gray-300">I agree to the Terms and Conditions</span>
-        </label>
-
-        <div class="text-center mt-4">
-          <button onclick="State()" id="submitButton" disabled class="vip-button text-lg px-10 py-3">
-            🚀 Launch Alex Premium Bot
-          </button>
-        </div>
+      <div>
+        <h3 class="text-yellow-400 text-lg mb-2">🎯 Events</h3>
+        <div id="listOfCommandsEvent" class="space-y-2"></div>
       </div>
-    </main>
+    </div>
 
-    <!-- Result + Audio -->
-    <div id="result" class="max-w-3xl mx-auto mt-10 text-center hidden"></div>
-    <div id="audio-container" class="hidden"></div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <button onclick="selectAllCommands()" class="vip-button w-full md:w-auto">✅ Select All Commands</button>
+      <button onclick="selectAllEvents()" class="vip-button w-full md:w-auto">🎯 Select All Events</button>
+    </div>
 
-    <!-- Footer -->
-    <footer class="text-center mt-12 mb-6 text-gray-500 text-sm">
-      <p>Time: <span id="time"></span> | Ping: <span id="ping"></span></p>
-    </footer>
+    <div>
+      <h3 class="text-yellow-400 text-sm mb-1">⚙️ Prefix</h3>
+      <input type="text" id="inputOfPrefix" placeholder="!" class="input-vip" />
+    </div>
 
-    <!-- JS Logic -->
-    <script src="script.js"></script>
-    <script>
-      let audioStarted = false;
-      document.addEventListener("click", function () {
-        if (!audioStarted) {
-          const iframe = document.createElement("iframe");
-          iframe.src = "https://www.youtube.com/embed/JdU0gDDCiB8?autoplay=1";
-          iframe.style.display = "none";
-          iframe.allow = "autoplay";
-          document.getElementById("audio-container").appendChild(iframe);
-          audioStarted = true;
-        }
-      });
-    </script>
+    <div>
+      <h3 class="text-yellow-400 text-sm mb-1">👑 Admin UID</h3>
+      <input type="text" id="inputOfAdmin" placeholder="Facebook UID" class="input-vip" />
+    </div>
+
+    <label class="flex items-center space-x-2">
+      <input type="checkbox" id="agreeCheckbox" class="accent-yellow-400" />
+      <span class="text-sm text-gray-300">I agree to the Terms and Conditions</span>
+    </label>
+
+    <div class="text-center mt-4">
+      <button onclick="State()" id="submitButton" disabled class="vip-button text-lg px-10 py-3">
+        🚀 Launch Alex Premium Bot
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- Result -->
+<div id="result" class="max-w-3xl mx-auto mt-10 text-center hidden"></div>
+<div id="audio-container" class="hidden"></div>
+
+<!-- Footer -->
+<footer class="text-center mt-12 mb-6 text-gray-500 text-sm">
+  <p>Time: <span id="time"></span> | Ping: <span id="ping"></span></p>
+</footer>
+
+<!-- Script.js -->
+<script src="script.js"></script>
+<script>
+  let audioStarted = false;
+  document.addEventListener("click", function () {
+    if (!audioStarted) {
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube.com/embed/JdU0gDDCiB8?autoplay=1";
+      iframe.style.display = "none";
+      iframe.allow = "autoplay";
+      document.getElementById("audio-container").appendChild(iframe);
+      audioStarted = true;
+    }
+  });
+</script>
+
   </body>
 </html>
