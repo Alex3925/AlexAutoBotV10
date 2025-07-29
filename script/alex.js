@@ -13,14 +13,14 @@ function formatFont(text) {
 }
 
 module.exports.config = {
-  name: "vern",
+  name: "alex",
   version: "1.0.0",
   role: 0,
   hasPrefix: false,
-  aliases: [],
-  description: "Interact with Ver for text-based responses",
-  usage: "ver <ask>",
-  credits: "Vern",
+  aliases: ["ai"],
+  description: "✨ Interact with Aesthetic AI for dreamy, stylish responses",
+  usage: "aesthetic <ask>",
+  credits: "Alex", // Original command by vern
   cooldown: 3
 };
 
@@ -32,10 +32,10 @@ module.exports.run = async function ({ api, event, args }) {
   const prompt = args.join(" ").trim();
 
   if (!prompt) {
-    return api.sendMessage(formatFont("hola mapanghe"), threadID, messageID);
+    return api.sendMessage(formatFont("✨ 𝘱𝘭𝘦𝘢𝘴𝘦 𝘦𝘯𝘵𝘦𝘳 𝘢 𝘴𝘱𝘢𝘳𝘬𝘭𝘪𝘯𝘨 𝘲𝘶𝘦𝘴𝘵𝘪𝘰𝘯"), threadID, messageID);
   }
 
-  const waitMsg = await api.sendMessage(formatFont("🤖  𝘃𝗲𝗿𝗻 𝗶𝘀 𝘁𝗵𝗶𝗻𝗸𝗶𝗻𝗴..."), threadID);
+  const waitMsg = await api.sendMessage(formatFont("🌙  alex 𝘪𝘴 𝘥𝘳𝘦𝘢𝘮𝘪𝘯𝘨..."), threadID);
 
   try {
     const { data } = await axios.get("https://markdevs-last-api-p2y6.onrender.com/bossing", {
@@ -45,26 +45,26 @@ module.exports.run = async function ({ api, event, args }) {
       }
     });
 
-    const reply = data?.response || "❌ No response from 𝘃𝗲𝗿𝗻.";
+    const reply = data?.response || "🌫️ No whispers from alex.";
 
     api.getUserInfo(senderID, async (err, infoUser) => {
-      const userName = infoUser?.[senderID]?.name || "Unknown User";
+      const userName = infoUser?.[senderID]?.name || "Mystic Wanderer";
       const timePH = new Date(Date.now() + 8 * 60 * 60 * 1000).toLocaleString('en-US', { hour12: false });
 
       const fullMessage = `
-🤖 𝘃𝗲𝗿𝗻
-━━━━━━━━━━━━━━━━━━
+🌟 alex
+━━━━━━━━━━━━━━━━━━━━━━━
 ${reply}
-━━━━━━━━━━━━━━━━━━
-🗣 𝗔𝘀𝗸𝗲𝗱 𝗕𝘆: ${userName}
-⏰ 𝗧𝗶𝗺𝗲: ${timePH}
+━━━━━━━━━━━━━━━━━━━━━━━
+🌌 𝘴𝘶𝘮𝘮𝘰𝘯𝘦𝘥 𝘣𝘺: ${userName}
+🕊️ 𝘵𝘪𝘮𝘦: ${timePH}
       `.trim();
 
       await api.editMessage(formatFont(fullMessage), waitMsg.messageID);
     });
 
   } catch (error) {
-    console.error("Bossing AI Error:", error);
-    api.editMessage(formatFont("❌ Failed to fetch Bossing AI response."), waitMsg.messageID);
+    console.error("Alex AI Error:", error);
+    api.editMessage(formatFont("🌫️ Failed to capture 𝘢𝘦𝘴𝘵𝘩𝘦𝘵𝘪𝘤'𝘴 essence."), waitMsg.messageID);
   }
 };
